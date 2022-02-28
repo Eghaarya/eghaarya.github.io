@@ -4,13 +4,43 @@ html{
 }
 body{
 	margin-bottom: 120px;
+	margin-top: 30px;
 }
 
-.jumbotron img {
-	width: 160px;
-	border: 5px solid #666;
+.jumbotron {
+	height: 400px;
+	background-image: url('../img/9.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 0 -100px;
+	color: #eaeaea;
+	overflow: hidden;
 }
-.smk p {
+
+.brand {
+	opacity: 0;
+	transform: translate(0, -30px);
+}
+
+
+.nama, .keahlian {
+	opacity: 0;
+	transform: translate(0, 40px);
+	text-shadow: 1px 1px 10px rgba(0, 0, 0, 1.0);
+}
+
+
+
+.jumbotron img {
+	opacity: 0;
+	transform: translate(0, -40px);
+	width: 160px;
+	border: 5px solid #eaeaea;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 1.0);
+}
+.smk  {
+	opacity: 0;
+	transform: translate(-40px, 0);
 	text-align: left;
 	font-size: 30px;
 	font-style: bold;
@@ -28,9 +58,37 @@ section {
 	min-height: 600px;
 }
 
+.pKiri, .pKanan{
+	opacity: 0;
+	transform: translate(-40px, 0);
+}
+
+.pKanan {
+	transform: translate(50px, 0);
+}
+
+.pKiri.pMuncul, .pKanan.pMuncul, .smk.pMuncul, .nama.pMuncul, .keahlian.pMuncul, .brand.pMuncul, .jumbotron img.pMuncul{
+	opacity: 1;
+	transform: translate(0, 0);
+	transition: 1s;
+}
+
 .portfolio {
 	background-color: #eee;
 	padding: 30px;
+}
+
+
+.portfolio .thumbnail {
+	opacity: 0;
+	transform: translate(0, -40px);
+	transition: 0.5s;
+
+}
+
+.portfolio .thumbnail.muncul{
+	opacity: 1;
+	transform: translate(0, 0);
 }
 
 h5 {
@@ -54,10 +112,12 @@ footer	{
 footer p{
 	color: #aaa;
 	font-size: 0.9em;
-	padding-bottom: 10px;
+	
 }
 
-}
+
+
+
 footer p i{
 	color: salmon;
 }
